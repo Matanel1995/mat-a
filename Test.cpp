@@ -19,6 +19,8 @@ TEST_CASE("valid rows and cols"){
     CHECK_THROWS(nospaces(mat(-1,5,'@','$')));
     CHECK_THROWS(nospaces(mat(5,-1,'@','$')));
     CHECK_THROWS(nospaces(mat(-3,-5,'@','$')));
+    CHECK_THROWS(nospaces(mat(0,5,'@','$')))
+    CHECK_THROWS(nospaces(mat(3,0,'@','$')))
 }
 
 TEST_CASE("Not valid symbol"){
