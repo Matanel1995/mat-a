@@ -19,8 +19,8 @@ TEST_CASE("valid rows and cols"){
     CHECK_THROWS(nospaces(mat(-1,5,'@','$')));
     CHECK_THROWS(nospaces(mat(5,-1,'@','$')));
     CHECK_THROWS(nospaces(mat(-3,-5,'@','$')));
-    CHECK_THROWS(nospaces(mat(0,5,'@','$')))
-    CHECK_THROWS(nospaces(mat(3,0,'@','$')))
+    CHECK_THROWS(nospaces(mat(0,5,'@','$')));
+    CHECK_THROWS(nospaces(mat(3,0,'@','$')));
 }
 
 TEST_CASE("Not valid symbol"){
@@ -37,18 +37,18 @@ TEST_CASE("Not valid symbol"){
 
 TEST_CASE("mat on samll dimenstions"){
     CHECK(nospaces(mat(1,1,'@','~')) == nospaces("@"));
-    CHECK(nospaces(mat(1,3,'@','~')) == nospaces("@@@"));
-    CHECK(nospaces(mat(3,1,'@','~')) == nospaces("@\n@\n@"));
-    CHECK(nospaces(mat(1,3,'~','@')) == nospaces("~~~"));
-    CHECK(nospaces(mat(3,1,'@','~')) == nospaces("~\n~\n~"));
-    CHECK(nospaces(mat(1,5,'@','~')) == nospaces("@@@@@"));
-    CHECK(nospaces(mat(5,1,'@','~')) == nospaces("@\n@\n@\n@\n@"));
-    CHECK(nospaces(mat(1,5,'~','@')) == nospaces("~~~~~~"));
-    CHECK(nospaces(mat(5,1,'@','~')) == nospaces("~\n~\n~\n~\n~"));
+    CHECK(nospaces(mat(3,1,'@','~')) == nospaces("@@@"));
+    CHECK(nospaces(mat(1,3,'@','~')) == nospaces("@\n@\n@"));
+    CHECK(nospaces(mat(3,1,'~','@')) == nospaces("~~~"));
+    CHECK(nospaces(mat(1,3,'~','@')) == nospaces("~\n~\n~"));
+    CHECK(nospaces(mat(5,1,'@','~')) == nospaces("@@@@@"));
+    CHECK(nospaces(mat(1,5,'@','~')) == nospaces("@\n@\n@\n@\n@"));
+    CHECK(nospaces(mat(5,1,'~','@')) == nospaces("~~~~~"));
+    CHECK(nospaces(mat(1,5,'~','@')) == nospaces("~\n~\n~\n~\n~"));
 }
 
 TEST_CASE("mat on big dimenstions"){
     CHECK(nospaces(mat(9,7,'@','-')) == nospaces("@@@@@@@@@\n@-------@\n@-@@@@@-@\n@-@---@-@\n@-@@@@@-@\n@-------@\n@@@@@@@@@"));
-    CHECK(nospaces(mat(13,5,'@','~')) == nospaces("@@@@@@@@@@@@@\n@-----------@\n@-@@@@@@@@@-@\n@-----------@\n@@@@@@@@@@@@@"));
+    CHECK(nospaces(mat(13,5,'@','-')) == nospaces("@@@@@@@@@@@@@\n@-----------@\n@-@@@@@@@@@-@\n@-----------@\n@@@@@@@@@@@@@"));
 }
 
