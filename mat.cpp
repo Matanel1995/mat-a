@@ -18,12 +18,12 @@ namespace ariel{
             throw std::out_of_range{"Mat size is always odd"};
         }
         // Check if the simbols are ok for both simbols
-        if(char1 == '\n' || char1 == '\t' || char1 == '\v' || char1 == '\0'){
-            throw std::invalid_argument{"not valid simbol"};
-        }
-        if(char2 == '\n' || char2 == '\t' || char2 == '\v' || char2 == '\0'){
-            throw std::invalid_argument{"not valid simbol"};
-        }
+        // if(char1 == '\n' || char1 == '\t' || char1 == '\v' || char1 == '\0'){
+        //     throw std::invalid_argument{"not valid simbol"};
+        // }
+        // if(char2 == '\n' || char2 == '\t' || char2 == '\v' || char2 == '\0'){
+        //     throw std::invalid_argument{"not valid simbol"};
+        // }
         if((int)char1 < min_char || (int)char1> max_char){
             throw std::invalid_argument{"not valid simbol"};
         }
@@ -87,6 +87,8 @@ namespace ariel{
                 answer += matrix[i][j];
             }
         }
+        // Clean the matrix becouse i have no use fo it anymore.
+        matrix.clear();
         return answer;
     }
 }
